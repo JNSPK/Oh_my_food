@@ -4,12 +4,31 @@ h1 {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  &.menu__categorie {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+    padding: 1rem;
+  }
 }
-
 h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 1rem;
+  &.card__titre {
+    position: absolute;
+    bottom: 1.2rem;
+  }
+}
+h3 {
   font-family: 'Shrikhand';
   font-style: italic;
   font-weight: 400;
+  font-size: 28px;
+  padding: 1.5rem 0 0 1rem;
 }
 p {
   font-family: 'Roboto', sans-serif;
@@ -18,6 +37,13 @@ p {
   line-height: 21px;
   &.localisation__texte {
     font-weight: 500;
+    font-size: 16px;
+  }
+  &.card__texte {
+    position: absolute;
+    bottom: 0;
+    font-weight: 300;
+    padding: 0 1rem 0.8rem 1rem;
   }
 }
 .btn {
@@ -26,4 +52,29 @@ p {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
+}
+a {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  i {
+    font-size: 11px;
+    padding-right: 0.8rem;
+  }
+}
+.etape {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+}
+.nouveau {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #008766;
 }

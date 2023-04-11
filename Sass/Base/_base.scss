@@ -4,16 +4,18 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   height: 100svh;
   width: 100svw;
+  scroll-behavior: smooth;
 }
 
 header {
   display: flex;
   position: sticky;
+  z-index: 3;
   top: 0;
-  height: 8%;
+  height: 4rem;
   justify-content: center;
   align-items: center;
   background-color: white;
@@ -22,18 +24,32 @@ header {
     max-height: 50%;
   }
 }
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
 main {
   height: 100%;
   width: 100%;
 }
+a {
+  text-decoration: none;
+  color: white;
+  &:visited {
+    color: white;
+  }
+}
 footer {
-  position: relative;
-  bottom: 0;
-  height: 15%;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  gap: 0.7rem;
   background-color: #353535;
   .logoreverse {
+    margin: 1rem 0 0.5rem 0;
     filter: invert(100%);
-    width: 20%;
+    width: 30%;
   }
 }

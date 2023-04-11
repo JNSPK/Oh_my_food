@@ -1,0 +1,46 @@
+section {
+  width: 100%;
+  &.fonctionnement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 1rem;
+    gap: 1rem;
+  }
+  &.restaurants {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #eaeaea;
+    padding: 2rem 0.9rem;
+    gap: 1rem;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &.localisation {
+      display: flex;
+      flex-direction: row;
+      background-color: #eaeaea;
+      height: 3rem;
+      gap: 0.8rem;
+    }
+    &.explorer {
+      background-color: #f7f7f7;
+      height: 20rem;
+      padding: 2rem;
+      text-align: center;
+      gap: 2rem;
+    }
+    &.instruction-container,
+    &.restaurants-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
