@@ -1,0 +1,32 @@
+//
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 17rem;
+  width: 100%;
+  background-color: $white;
+  color: $black;
+  border-radius: 25px;
+  overflow: hidden;
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -25%;
+    border-radius: 25px 25px 0 0;
+  }
+
+  &__titre {
+    position: absolute;
+    bottom: 1.2rem;
+    color: $black;
+
+    &--menu {
+      padding: 1rem 1rem 0.5rem 1rem;
+    }
+  }
+}

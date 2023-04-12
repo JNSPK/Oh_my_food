@@ -15,7 +15,8 @@ section {
     padding: 2rem 0.9rem;
     gap: 1rem;
   }
-  div {
+  div,
+  ul {
     display: flex;
     flex-direction: column;
     width: 100%;
