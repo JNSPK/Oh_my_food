@@ -1,4 +1,4 @@
-//
+// Colors
 
 $white: white;
 $earthborn-bugle: #f7f7f7;
@@ -11,8 +11,18 @@ $mine-shaft: #353535;
 $blush-pink: #ff79da;
 $grey: grey;
 
-//
+// Font
 
 $font-family-sans-serif: Roboto, 'Helvetica Neue', 'Noto Sans',
   'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
   'Segoe UI Symbol', 'Noto Color Emoji';
+
+$titre: 700;
+$textimportant: 500;
+$text: 300;
+
+// Param boucle
+
+$card_count: 4;
+$delay_between_card: 0.5s;
+$delay_category: $card_count * $delay_between_card;

@@ -1,8 +1,7 @@
 //
 
 .card {
-  display: flex;
-  flex-direction: column;
+  @include d-flex-column;
   position: relative;
   height: 17rem;
   width: 100%;
@@ -28,5 +27,10 @@
     &--menu {
       padding: 1rem 1rem 0.5rem 1rem;
     }
+  }
+  &__texte {
+    position: absolute;
+    bottom: 0;
+    padding: 0 1rem 0.8rem 1rem;
   }
 }

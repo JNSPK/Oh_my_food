@@ -1,20 +1,18 @@
 h1 {
   font-family: $font-family-sans-serif;
-  font-style: normal;
-  font-weight: 700;
+  font-weight: $titre;
   font-size: 24px;
   line-height: 28px;
   &.menu__categorie {
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: $text;
     font-size: 16px;
     padding: 1rem;
   }
 }
 h2 {
   font-family: $font-family-sans-serif;
-  font-style: normal;
-  font-weight: 700;
+  font-weight: $textimportant;
   font-size: 18px;
   line-height: 21px;
   padding: 1rem;
@@ -22,51 +20,42 @@ h2 {
     position: absolute;
     bottom: 1.2rem;
   }
-  &.menu__card__titre {
-    padding: 1rem 1rem 0.5rem 1rem;
-  }
 }
 h3 {
   font-family: 'Shrikhand';
   font-style: italic;
-  font-weight: 400;
+  font-weight: $textimportant;
   font-size: 1.6rem;
 }
 p {
   font-family: $font-family-sans-serif, sans-serif;
-  font-weight: 300;
+  font-weight: $text;
   font-size: 18px;
-  line-height: 21px;
 
   &.localisation__texte {
-    font-weight: 500;
+    font-weight: $textimportant;
     font-size: 16px;
   }
   &.card__texte {
-    position: absolute;
-    bottom: 0;
-    font-weight: 300;
-    padding: 0 1rem 0.8rem 1rem;
+    font-weight: $text;
   }
   &.menu__card__texte {
     font-size: 15px;
-    padding: 0 0 1rem 1rem;
   }
+
   &.menu__card__prix {
-    font-weight: 700;
+    font-weight: $textimportant;
     font-size: 15px;
   }
 }
 .btn {
   font-family: $font-family-sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
 }
 a {
   font-family: $font-family-sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
@@ -77,13 +66,11 @@ a {
 }
 .etape {
   font-family: $font-family-sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  font-weight: $textimportant;
 }
 .nouveau {
   font-family: $font-family-sans-serif;
-  font-style: normal;
-  font-weight: 500;
+  font-weight: $textimportant;
   font-size: 14px;
   line-height: 16px;
   text-align: center;

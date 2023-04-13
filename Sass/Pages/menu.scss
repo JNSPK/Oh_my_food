@@ -1,6 +1,18 @@
+//
+
 .menu {
-  display: flex;
-  flex-direction: column;
+  @include d-flex-column;
+  overflow: hidden;
+  &__entrees &__card {
+    @include animated_card();
+  }
+  &__plats &__card {
+    @include animated_card($delay_category);
+  }
+  &__desserts &__card {
+    @include animated_card($delay_category * 2);
+  }
+
   &__image {
     height: 15rem;
     width: 100%;
@@ -8,8 +20,7 @@
     object-fit: cover;
   }
   &__texte {
-    display: flex;
-    flex-direction: column;
+    @include d-flex-column;
     align-items: center;
     position: relative;
     background-color: $earthborn-bugle;
@@ -29,8 +40,7 @@
   &__entrees,
   &__plats,
   &__desserts {
-    display: flex;
-    flex-direction: column;
+    @include d-flex-column;
     width: 100%;
     gap: 1rem;
     padding: 0 1rem 0 1rem;
@@ -38,23 +48,34 @@
 
   &__card {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
-    width: 100%;
     height: 5rem;
     box-shadow: 0px 4px 15px rgba($black, 0.15);
     border-radius: 20px;
     background-color: $white;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+
+    &__container {
+      flex: 1;
+      @include d-flex-column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    &__titre {
+      padding: 0 0 0.5rem 0;
+    }
+
+    &__texte {
+      @include ellipsis;
+    }
 
     &__prix {
-      position: absolute;
-      bottom: 0.8rem;
-      right: 1rem;
+      align-self: end;
+    }
+
+    &__texteetprix {
+      display: flex;
+      justify-content: inherit;
+      width: 100%;
     }
   }
   &__categorie::after {

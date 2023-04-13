@@ -38,10 +38,6 @@ main {
 
 a {
   text-decoration: none;
-  color: white;
-}
-a:visited {
-  color: white;
 }
 
 footer {
@@ -51,6 +47,10 @@ footer {
   padding: 1rem 1.5rem 1.5rem 1.5rem;
   gap: 0.7rem;
   background-color: #353535;
+  color: white;
+}
+footer a {
+  color: inherit;
 }
 footer .logoreverse {
   margin: 1rem 0 0.5rem 0;
@@ -60,7 +60,6 @@ footer .logoreverse {
 
 h1 {
   font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -74,8 +73,7 @@ h1.menu__categorie {
 
 h2 {
   font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
   line-height: 21px;
   padding: 1rem;
@@ -84,14 +82,11 @@ h2.card__titre {
   position: absolute;
   bottom: 1.2rem;
 }
-h2.menu__card__titre {
-  padding: 1rem 1rem 0.5rem 1rem;
-}
 
 h3 {
   font-family: "Shrikhand";
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.6rem;
 }
 
@@ -99,30 +94,24 @@ p {
   font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
   font-weight: 300;
   font-size: 18px;
-  line-height: 21px;
 }
 p.localisation__texte {
   font-weight: 500;
   font-size: 16px;
 }
 p.card__texte {
-  position: absolute;
-  bottom: 0;
   font-weight: 300;
-  padding: 0 1rem 0.8rem 1rem;
 }
 p.menu__card__texte {
   font-size: 15px;
-  padding: 0 0 1rem 1rem;
 }
 p.menu__card__prix {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 15px;
 }
 
 .btn {
   font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
@@ -130,7 +119,6 @@ p.menu__card__prix {
 
 a {
   font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
@@ -142,13 +130,11 @@ a i {
 
 .etape {
   font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .nouveau {
   font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -184,32 +170,6 @@ a i {
   color: white;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 17rem;
-  width: 100%;
-  background-color: white;
-  border-radius: 25px;
-  overflow: hidden;
-}
-.card__link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-.card img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: -25%;
-  border-radius: 25px 25px 0 0;
-}
-
 .coeur {
   position: absolute;
   bottom: 1.5rem;
@@ -226,22 +186,44 @@ input {
   left: -9999px;
 }
 
-label {
+label.coeur, label.coeur--menu {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 2rem;
 }
-label::before {
+label.coeur::before, label.coeur--menu::before {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 2rem;
   font-family: "font awesome 5 free";
   content: "\f004";
   font-size: 20px;
 }
+label.card--clic {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  justify-content: inherit;
+}
+label.card--clic::after {
+  opacity: 0;
+  height: 100%;
+  width: 0px;
+  justify-content: center;
+  align-items: center;
+  font-family: "font awesome 5 free";
+  font-weight: bold;
+  content: "\f058";
+  font-size: 30px;
+  border-radius: 0 20px 20px 0;
+  background-color: transparent;
+}
 
-input:checked + label::before {
+input:checked + ::before {
   background: linear-gradient(to top, #9356dc -11.44%, #ff79da 123.93%);
   background-clip: text;
   color: transparent;
@@ -249,13 +231,27 @@ input:checked + label::before {
   transition: all 0.5s ease-out;
 }
 
+input:checked + ::after {
+  display: flex;
+  opacity: 1;
+  right: 0;
+  background-color: #99e2d0;
+  color: white;
+  position: relative;
+  flex-grow: 0.2;
+  transition: all 0.5s ease-out;
+}
+
 .nouveau {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
   background-color: #99e2d0;
   border-radius: 2px;
   z-index: 2;
   width: 5rem;
   height: 2rem;
-  position: absolute;
   right: 1rem;
   top: 1rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
@@ -308,6 +304,33 @@ i.fa-arrow-left {
 .card__titre--menu {
   padding: 1rem 1rem 0.5rem 1rem;
 }
+.card__texte {
+  position: absolute;
+  bottom: 0;
+  padding: 0 1rem 0.8rem 1rem;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  background: linear-gradient(to top, #9356dc -11.44%, #ff79da 123.93%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  color: white;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  filter: brightness(1) opacity(0.7);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+.btn__accueil {
+  width: 15rem;
+}
+.btn__menu {
+  width: 15rem;
+}
 
 section {
   width: 100%;
@@ -327,23 +350,22 @@ section.restaurants {
   padding: 2rem 0.9rem;
   gap: 1rem;
 }
-section div,
+section > div,
 section ul {
   display: flex;
   flex-direction: column;
-  width: 100%;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
-section div.localisation,
+section > div.localisation,
 section ul.localisation {
-  display: flex;
   flex-direction: row;
   background-color: #eaeaea;
   height: 3rem;
   gap: 0.8rem;
 }
-section div.explorer,
+section > div.explorer,
 section ul.explorer {
   background-color: #f7f7f7;
   height: 20rem;
@@ -351,10 +373,9 @@ section ul.explorer {
   text-align: center;
   gap: 2rem;
 }
-section div.instruction-container, section div.restaurants-container,
+section > div.instruction-container, section > div.restaurants-container,
 section ul.instruction-container,
 section ul.restaurants-container {
-  display: flex;
   align-items: center;
   gap: 1rem;
 }
@@ -362,6 +383,67 @@ section ul.restaurants-container {
 .menu {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+.menu__entrees .menu__card {
+  animation: slideInUp 1s forwards, fadeIn 1s forwards;
+  animation-timing-function: ease-in-out;
+}
+.menu__entrees .menu__card:nth-of-type(1) {
+  opacity: 0;
+  animation-delay: 0s;
+}
+.menu__entrees .menu__card:nth-of-type(2) {
+  opacity: 0;
+  animation-delay: 1s;
+}
+.menu__entrees .menu__card:nth-of-type(3) {
+  opacity: 0;
+  animation-delay: 1.5s;
+}
+.menu__entrees .menu__card:nth-of-type(4) {
+  opacity: 0;
+  animation-delay: 2s;
+}
+.menu__plats .menu__card {
+  animation: slideInUp 1s forwards, fadeIn 1s forwards;
+  animation-timing-function: ease-in-out;
+}
+.menu__plats .menu__card:nth-of-type(1) {
+  opacity: 0;
+  animation-delay: 2s;
+}
+.menu__plats .menu__card:nth-of-type(2) {
+  opacity: 0;
+  animation-delay: 3s;
+}
+.menu__plats .menu__card:nth-of-type(3) {
+  opacity: 0;
+  animation-delay: 3.5s;
+}
+.menu__plats .menu__card:nth-of-type(4) {
+  opacity: 0;
+  animation-delay: 4s;
+}
+.menu__desserts .menu__card {
+  animation: slideInUp 1s forwards, fadeIn 1s forwards;
+  animation-timing-function: ease-in-out;
+}
+.menu__desserts .menu__card:nth-of-type(1) {
+  opacity: 0;
+  animation-delay: 4s;
+}
+.menu__desserts .menu__card:nth-of-type(2) {
+  opacity: 0;
+  animation-delay: 5s;
+}
+.menu__desserts .menu__card:nth-of-type(3) {
+  opacity: 0;
+  animation-delay: 5.5s;
+}
+.menu__desserts .menu__card:nth-of-type(4) {
+  opacity: 0;
+  animation-delay: 6s;
 }
 .menu__image {
   height: 15rem;
@@ -396,23 +478,33 @@ section ul.restaurants-container {
 }
 .menu__card {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-  width: 100%;
   height: 5rem;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   background-color: white;
+}
+.menu__card__container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.menu__card__titre {
+  padding: 0 0 0.5rem 0;
+}
+.menu__card__texte {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 .menu__card__prix {
-  position: absolute;
-  bottom: 0.8rem;
-  right: 1rem;
+  align-self: end;
+}
+.menu__card__texteetprix {
+  display: flex;
+  justify-content: inherit;
+  width: 100%;
 }
 .menu__categorie::after {
   content: "";
@@ -420,6 +512,24 @@ section ul.restaurants-container {
   background: #99e2d0;
   height: 0.2rem;
   width: 2.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

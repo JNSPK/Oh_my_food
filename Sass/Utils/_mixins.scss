@@ -1,0 +1,57 @@
+// Display
+@mixin d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin center {
+  justify-content: center;
+  align-items: center;
+}
+
+// Ellipsis
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+// Boucle animation plats
+
+@mixin animated_card($inital_delay: 0s) {
+  animation: slideInUp 1s forwards, fadeIn 1s forwards;
+  animation-timing-function: ease-in-out;
+
+  @for $card from 1 through 4 {
+    &:nth-of-type(#{$card}) {
+      opacity: 0;
+
+      @if $card == 1 {
+        animation-delay: $inital_delay;
+      } @else {
+        animation-delay: $inital_delay + $delay_between_card * $card;
+      }
+    }
+  }
+}
+
+@mixin selected_card() {
+  animation: slideRight 1s forwards;
+}
+
+// Media queries
+
+@mixin tablet {
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: 1400px) {
+  }
+}

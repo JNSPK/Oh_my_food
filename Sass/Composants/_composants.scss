@@ -14,8 +14,7 @@
 
   .etape {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center;
     position: absolute;
     left: -1rem;
     height: 2rem;
@@ -27,31 +26,6 @@
   }
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 17rem;
-  width: 100%;
-  background-color: $white;
-  border-radius: 25px;
-  overflow: hidden;
-  &__link {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: -25%;
-    border-radius: 25px 25px 0 0;
-  }
-}
 .coeur {
   position: absolute;
   bottom: 1.5rem;
@@ -68,21 +42,45 @@ input {
   left: -9999px;
 }
 label {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  width: 2rem;
-  &::before {
+  &.coeur,
+  &.coeur--menu {
+    cursor: pointer;
     display: flex;
-    justify-content: center;
+    @include center;
     width: 2rem;
-    font-family: 'font awesome 5 free';
-    content: '\f004';
-    font-size: 20px;
+    &::before {
+      display: flex;
+      @include center;
+      width: 2rem;
+      font-family: 'font awesome 5 free';
+      content: '\f004';
+      font-size: 20px;
+    }
+  }
+  &.card--clic {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+
+    justify-content: inherit;
+    &::after {
+      opacity: 0;
+      height: 100%;
+      width: 0px;
+      // right: -10rem;
+      @include center;
+      font-family: 'font awesome 5 free';
+      font-weight: bold;
+      content: '\f058';
+      font-size: 30px;
+      border-radius: 0 20px 20px 0;
+      background-color: transparent;
+    }
   }
 }
 
-input:checked + label::before {
+input:checked + ::before {
   background: linear-gradient(
     to top,
     $lavender-indigo -11.44%,
@@ -93,14 +91,26 @@ input:checked + label::before {
   font-weight: bold;
   transition: all 0.5s ease-out;
 }
+input:checked + ::after {
+  display: flex;
+  opacity: 1;
+  right: 0;
+  background-color: $morning-glory;
+  color: $white;
+  position: relative;
+  flex-grow: 0.2;
+  transition: all 0.5s ease-out;
+}
 
 .nouveau {
+  display: flex;
+  position: absolute;
+  @include center;
   background-color: $morning-glory;
   border-radius: 2px;
   z-index: 2;
   width: 5rem;
   height: 2rem;
-  position: absolute;
   right: 1rem;
   top: 1rem;
   box-shadow: 0px 2px 4px rgba($black, 0.15);

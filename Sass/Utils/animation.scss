@@ -1,0 +1,36 @@
+// Menu
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    visibility: visible;
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+// Cards
+
+// @keyframes slideRight {
+//   from {
+//     transform: translateX(100%);
+//     visibility: visible;
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }
