@@ -59,7 +59,9 @@ footer .logoreverse {
 }
 
 h1 {
-  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -72,7 +74,9 @@ h1.menu__categorie {
 }
 
 h2 {
-  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
@@ -84,14 +88,16 @@ h2.card__titre {
 }
 
 h3 {
-  font-family: "Shrikhand";
+  font-family: 'Shrikhand';
   font-style: italic;
   font-weight: 500;
   font-size: 1.6rem;
 }
 
 p {
-  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji', sans-serif;
   font-weight: 300;
   font-size: 18px;
 }
@@ -111,14 +117,18 @@ p.menu__card__prix {
 }
 
 .btn {
-  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
 }
 
 a {
-  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
@@ -129,12 +139,16 @@ a i {
 }
 
 .etape {
-  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-weight: 500;
 }
 
 .nouveau {
-  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -186,41 +200,33 @@ input {
   left: -9999px;
 }
 
-label.coeur, label.coeur--menu {
+label.coeur,
+label.coeur--menu {
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 2rem;
 }
-label.coeur::before, label.coeur--menu::before {
+label.coeur::before,
+label.coeur--menu::before {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 2rem;
-  font-family: "font awesome 5 free";
-  content: "\f004";
+  font-family: 'font awesome 5 free';
+  content: '\f004';
   font-size: 20px;
 }
 label.card--clic {
-  position: relative;
   cursor: pointer;
-  width: 100%;
-  height: 100%;
-  justify-content: inherit;
 }
 label.card--clic::after {
-  opacity: 0;
-  height: 100%;
-  width: 0px;
-  justify-content: center;
-  align-items: center;
-  font-family: "font awesome 5 free";
-  font-weight: bold;
-  content: "\f058";
-  font-size: 30px;
-  border-radius: 0 20px 20px 0;
-  background-color: transparent;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-basis: 20%;
+  content: 'P';
+  background-color: red;
 }
 
 input:checked + ::before {
@@ -232,13 +238,10 @@ input:checked + ::before {
 }
 
 input:checked + ::after {
-  display: flex;
-  opacity: 1;
-  right: 0;
+  animation: slideRight;
   background-color: #99e2d0;
-  color: white;
-  position: relative;
-  flex-grow: 0.2;
+  color: green;
+  animation: slideRight;
   transition: all 0.5s ease-out;
 }
 
@@ -373,7 +376,8 @@ section ul.explorer {
   text-align: center;
   gap: 2rem;
 }
-section > div.instruction-container, section > div.restaurants-container,
+section > div.instruction-container,
+section > div.restaurants-container,
 section ul.instruction-container,
 section ul.restaurants-container {
   align-items: center;
@@ -383,7 +387,6 @@ section ul.restaurants-container {
 .menu {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 .menu__entrees .menu__card {
   animation: slideInUp 1s forwards, fadeIn 1s forwards;
@@ -469,7 +472,9 @@ section ul.restaurants-container {
   width: 100%;
   padding: 1.5rem 0 0 1rem;
 }
-.menu__entrees, .menu__plats, .menu__desserts {
+.menu__entrees,
+.menu__plats,
+.menu__desserts {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -482,6 +487,7 @@ section ul.restaurants-container {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   background-color: white;
+  padding: 1rem;
 }
 .menu__card__container {
   flex: 1;
@@ -491,7 +497,10 @@ section ul.restaurants-container {
   overflow: hidden;
 }
 .menu__card__titre {
-  padding: 0 0 0.5rem 0;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu__card__texte {
   overflow: hidden;
@@ -501,13 +510,8 @@ section ul.restaurants-container {
 .menu__card__prix {
   align-self: end;
 }
-.menu__card__texteetprix {
-  display: flex;
-  justify-content: inherit;
-  width: 100%;
-}
 .menu__categorie::after {
-  content: "";
+  content: '';
   display: block;
   background: #99e2d0;
   height: 0.2rem;
@@ -529,6 +533,17 @@ section ul.restaurants-container {
   }
   to {
     transform: translateY(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
