@@ -16,6 +16,7 @@ header {
   z-index: 3;
   top: 0;
   height: 4rem;
+  width: 100%;
   @include center;
   background-color: $white;
   box-shadow: 0px 2px 4px rgba($black, 0.15);
@@ -24,9 +25,15 @@ header {
   }
 }
 body {
-  @include d-flex-column;
   position: relative;
+  & .main-container {
+    width: 100%;
+    @include devices(desktop) {
+      @include center;
+    }
+  }
 }
+
 main {
   height: 100%;
   width: 100%;
@@ -35,18 +42,59 @@ a {
   text-decoration: none;
 }
 footer {
-  @include d-flex-column;
   width: 100%;
   padding: 1rem 1.5rem 1.5rem 1.5rem;
-  gap: 0.7rem;
+  gap: 2rem;
   background-color: $mine-shaft;
   color: $white;
+  & .footer__lien {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
   a {
     color: inherit;
   }
   .logoreverse {
-    margin: 1rem 0 0.5rem 0;
+    padding-bottom: 1rem;
     filter: invert(100%);
-    width: 30%;
+    width: 8rem;
+  }
+  @include devices(tablet) {
+    display: flex;
+    max-height: 10%;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    & .footer__lien {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    & .logoreverse {
+      padding: 0;
+    }
+  }
+  @include devices(desktop) {
+    display: flex;
+    max-height: 10%;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    & .footer__lien {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+
+    & .logoreverse {
+      padding: 0;
+    }
   }
 }

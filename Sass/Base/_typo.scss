@@ -10,6 +10,14 @@ h1 {
     padding: 1rem;
   }
 }
+.explorer h1 {
+  @include devices(tablet) {
+    font-size: 28px;
+  }
+  @include devices(desktop) {
+    font-size: 40px;
+  }
+}
 h2 {
   font-family: $font-family-sans-serif;
   font-weight: $textimportant;

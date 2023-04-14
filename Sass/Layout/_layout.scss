@@ -1,17 +1,24 @@
 section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  &.fonctionnement {
+  position: relative;
+  &.fonctionnement,
+  &.restaurants {
     @include d-flex-column;
-    justify-content: center;
+    @include center;
+    & h1 {
+      width: 100%;
+      max-width: 1440px;
+      padding-bottom: 1rem;
+    }
     padding: 3rem 1rem;
     gap: 1rem;
   }
+
   &.restaurants {
-    @include d-flex-column;
-    position: relative;
     background-color: $gallery;
-    padding: 2rem 0.9rem;
-    gap: 1rem;
   }
   & > div,
   ul {
@@ -36,6 +43,41 @@ section {
     &.restaurants-container {
       align-items: center;
       gap: 1rem;
+
+      @include devices(tablet) {
+        flex-direction: row;
+      }
+      @include devices(desktop) {
+        flex-direction: row;
+        max-width: 1440px;
+      }
+    }
+  }
+  & .instruction-container {
+    gap: 2rem;
+    @include devices(tablet) {
+      padding: 2rem;
+    }
+    @include devices(desktop) {
+      padding: 2rem;
+    }
+  }
+  & .restaurants-container {
+    @include devices(tablet) {
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      & .card {
+        width: 48%;
+      }
+    }
+    @include devices(desktop) {
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      & .card {
+        width: 48%;
+      }
     }
   }
 }

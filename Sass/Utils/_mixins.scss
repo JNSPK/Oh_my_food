@@ -41,17 +41,16 @@
 
 // Media queries
 
-@mixin tablet {
-  @media screen and (min-width: 800px) and (max-width: 1200px) {
+@mixin devices($breakpoint) {
+  @if $breakpoint == tablet {
+    @media screen and (min-width: 700px) and (max-width: 999.9px) {
+      @content;
+    }
   }
-}
 
-@mixin desktop {
-  @media (min-width: 1200px) {
-  }
-}
-
-@mixin large-desktop {
-  @media (min-width: 1400px) {
+  @if $breakpoint == desktop {
+    @media (min-width: 1000px) {
+      @content;
+    }
   }
 }

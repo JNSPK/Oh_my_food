@@ -19,120 +19,126 @@
     <title>Oh my food</title>
   </head>
   <body>
-    <header>
-      <img
-        src="./Assets/Images/logo/ohmyfood.png"
-        alt="logo"
-        class="header__logo" />
-    </header>
-    <main>
-      <!-- Localisation et accueil -->
+    <div class="main-container">
+      <header>
+        <img
+          src="./Assets/Images/logo/ohmyfood.png"
+          alt="logo"
+          class="header__logo" />
+      </header>
+      <main>
+        <!-- Localisation et accueil -->
 
-      <section>
-        <div class="localisation">
-          <i class="fa-map-marker-alt fa-solid"></i>
-          <p class="localisation__texte">Paris, Belleville</p>
-        </div>
-        <div class="explorer">
-          <h1>Réservez le menu qui vous convient</h1>
-          <p>
-            Découvrez des restaurants d'exception, sélectionnés par nos soins
-          </p>
-          <a href="#restaurants" class="btn btn__accueil">
-            Explorer nos restaurants
-          </a>
-        </div>
-      </section>
+        <section>
+          <div class="localisation">
+            <i class="fa-map-marker-alt fa-solid"></i>
+            <p class="localisation__texte">Paris, Belleville</p>
+          </div>
+          <div class="explorer">
+            <h1>Réservez le menu qui vous convient</h1>
+            <p>
+              Découvrez des restaurants d'exception, sélectionnés par nos soins
+            </p>
+            <a href="#restaurants" class="btn btn__accueil">
+              Explorer nos restaurants
+            </a>
+          </div>
+        </section>
 
-      <!-- Fonctionnement -->
+        <!-- Fonctionnement -->
 
-      <section class="fonctionnement">
-        <h1>Fonctionnement</h1>
-        <ul class="instruction-container">
-          <li class="instructions__carte">
-            <div class="etape">1</div>
-            <i class="fa-mobile-alt fa-solid gris"></i>
-            <p>Choisissez un restaurant</p>
-          </li>
-          <li class="instructions__carte">
-            <div class="etape">2</div>
-            <i class="fa-list fa-solid gris"></i>
-            <p>Composez votre menu</p>
-          </li>
-          <li class="instructions__carte">
-            <div class="etape">3</div>
-            <i class="fa-store fa-solid violet"></i>
-            <p>Dégustez au restaurant</p>
-          </li>
-        </ul>
-      </section>
+        <section class="fonctionnement">
+          <h1>Fonctionnement</h1>
+          <ul class="instruction-container">
+            <li class="instructions__carte">
+              <div class="etape">1</div>
+              <i class="fa-mobile-alt fa-solid gris"></i>
+              <p>Choisissez un restaurant</p>
+            </li>
+            <li class="instructions__carte">
+              <div class="etape">2</div>
+              <i class="fa-list fa-solid gris"></i>
+              <p>Composez votre menu</p>
+            </li>
+            <li class="instructions__carte">
+              <div class="etape">3</div>
+              <i class="fa-store fa-solid violet"></i>
+              <p>Dégustez au restaurant</p>
+            </li>
+          </ul>
+        </section>
 
-      <!-- Les restaurants -->
+        <!-- Les restaurants -->
 
-      <section id="restaurants" class="restaurants">
-        <h1>Restaurants</h1>
-        <div class="restaurants-container">
-          <!-- Cards -->
+        <section id="restaurants" class="restaurants">
+          <h1>Restaurants</h1>
+          <div class="restaurants-container">
+            <!-- Cards -->
 
-          <a class="card" href="./menu1.html">
-            <img
-              class="card__img"
-              src="./Assets/Images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-              alt="Illustration du restaurant" />
-            <div class="nouveau">Nouveau</div>
-            <h2 class="card__titre">La palette du goût</h2>
-            <p class="card__texte">Ménilmontant</p>
-            <input id="toggle1" type="checkbox" />
-            <label for="toggle1" class="coeur"></label>
-          </a>
-          <a class="card" href="./menu2.html">
-            <img
-              class="card__img"
-              src="./Assets/Images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
-              alt="Illustration du restaurant" />
-            <div class="nouveau">Nouveau</div>
-            <h2 class="card__titre">La note enchantée</h2>
-            <p class="card__texte">Charonne</p>
-            <input id="toggle2" type="checkbox" />
-            <label for="toggle2" class="coeur"></label>
-          </a>
-          <a class="card" href="./menu3.html">
-            <img
-              class="card__img"
-              src="./Assets/Images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg
+            <a class="card" href="./menu1.html">
+              <img
+                class="card__img"
+                src="./Assets/Images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                alt="Illustration du restaurant" />
+              <div class="nouveau">Nouveau</div>
+              <h2 class="card__titre">La palette du goût</h2>
+              <p class="card__texte">Ménilmontant</p>
+              <input id="toggle1" type="checkbox" />
+              <label for="toggle1" class="coeur"></label>
+            </a>
+            <a class="card" href="./menu2.html">
+              <img
+                class="card__img"
+                src="./Assets/Images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
+                alt="Illustration du restaurant" />
+              <div class="nouveau">Nouveau</div>
+              <h2 class="card__titre">La note enchantée</h2>
+              <p class="card__texte">Charonne</p>
+              <input id="toggle2" type="checkbox" />
+              <label for="toggle2" class="coeur"></label>
+            </a>
+            <a class="card" href="./menu3.html">
+              <img
+                class="card__img"
+                src="./Assets/Images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg
               "
-              alt="Illustration du restaurant" />
-            <h2 class="card__titre">À la française</h2>
-            <p class="card__texte">Cité rouge</p>
-            <input id="toggle3" type="checkbox" />
-            <label for="toggle3" class="coeur"></label>
-          </a>
-          <a class="card" href="./menu4.html">
-            <img
-              class="card__img"
-              src="./Assets/Images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-              alt="Illustration du restaurant" />
-            <h2 class="card__titre">Le délice des sens</h2>
-            <p class="card__texte">Folie-Méricourt</p>
-            <input id="toggle4" type="checkbox" />
-            <label for="toggle4" class="coeur"></label>
-          </a>
-        </div>
-      </section>
-    </main>
+                alt="Illustration du restaurant" />
+              <h2 class="card__titre">À la française</h2>
+              <p class="card__texte">Cité rouge</p>
+              <input id="toggle3" type="checkbox" />
+              <label for="toggle3" class="coeur"></label>
+            </a>
+            <a class="card" href="./menu4.html">
+              <img
+                class="card__img"
+                src="./Assets/Images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                alt="Illustration du restaurant" />
+              <h2 class="card__titre">Le délice des sens</h2>
+              <p class="card__texte">Folie-Méricourt</p>
+              <input id="toggle4" type="checkbox" />
+              <label for="toggle4" class="coeur"></label>
+            </a>
+          </div>
+        </section>
+      </main>
 
-    <!-- Footer -->
-    <footer>
-      <img
-        src="./Assets/Images/logo/ohmyfood.png"
-        alt="logo"
-        class="logoreverse" />
-      <a href="#"><i class="fa-utensils fa-solid"></i>Proposer un restaurant</a>
-      <a href="#"
-        ><i class="fa-hands-helping fa-solid"></i>Devenir partenaire</a
-      >
-      <a href="#">Mentions légales</a>
-      <a href="#">Contact</a>
-    </footer>
+      <!-- Footer -->
+      <footer>
+        <img
+          src="./Assets/Images/logo/ohmyfood.png"
+          alt="logo"
+          class="logoreverse" />
+        <div class="footer__lien">
+          <a href="#"
+            ><i class="fa-utensils fa-solid"></i>Proposer un restaurant</a
+          >
+          <a href="#"
+            ><i class="fa-hands-helping fa-solid"></i>Devenir partenaire</a
+          >
+          <a href="#">Mentions légales</a>
+          <a href="#">Contact</a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
