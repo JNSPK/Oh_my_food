@@ -23,14 +23,13 @@
 
 // Cards
 
-// @keyframes slideRight {
-//   from {
-//     transform: translateX(100%);
-//     visibility: visible;
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+    visibility: visible;
+  }
+
+  to {
+    transform: translateX(0, 0, 0);
+  }
+}

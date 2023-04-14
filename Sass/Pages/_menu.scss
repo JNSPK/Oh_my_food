@@ -62,20 +62,26 @@
 
     &__titre {
       padding: 0 0 0.5rem 0;
+      @include ellipsis;
     }
 
-    &__texte {
+    &__description {
       @include ellipsis;
     }
 
     &__prix {
       align-self: end;
+      padding: 2.1rem 1rem;
+      height: 50%;
     }
 
-    &__texteetprix {
+    &__texte {
       display: flex;
+      flex-direction: column;
       justify-content: inherit;
       width: 100%;
+      padding: 1rem;
+      @include ellipsis;
     }
   }
   &__categorie::after {
