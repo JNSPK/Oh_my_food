@@ -52,21 +52,22 @@ section {
         max-width: 1440px;
       }
     }
-  }
-  & .instruction-container {
-    gap: 2rem;
-    @include devices(tablet) {
-      padding: 2rem;
+    &.instruction-container {
+      @include devices(tablet) {
+        padding: 2rem;
+        gap: 3rem;
+      }
+      @include devices(desktop) {
+        padding: 2rem;
+        gap: 3rem;
+      }
     }
-    @include devices(desktop) {
-      padding: 2rem;
-    }
   }
+
   & .restaurants-container {
     @include devices(tablet) {
       flex-direction: column;
       flex-wrap: wrap;
-
       & .card {
         width: 48%;
       }

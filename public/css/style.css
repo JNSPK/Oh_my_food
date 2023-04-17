@@ -48,6 +48,10 @@ a {
   text-decoration: none;
 }
 
+figure {
+  width: 100%;
+}
+
 footer {
   width: 100%;
   padding: 1rem 1.5rem 1.5rem 1.5rem;
@@ -115,7 +119,8 @@ h1 {
   font-size: 24px;
   line-height: 28px;
 }
-h1.menu__categorie {
+
+.menu h1 {
   text-transform: uppercase;
   font-weight: 300;
   font-size: 16px;
@@ -145,9 +150,25 @@ h2.card__titre {
   bottom: 1.2rem;
 }
 
+span {
+  font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+span.menu__card__titre {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+span.menu__card__description {
+  font-weight: 300;
+  font-size: 15px;
+}
+span.menu__card__prix {
+  font-weight: 500;
+  font-size: 15px;
+}
+
 h3 {
   font-family: "Shrikhand";
-  font-style: italic;
   font-weight: 500;
   font-size: 1.6rem;
 }
@@ -163,13 +184,6 @@ p.localisation__texte {
 }
 p.card__texte {
   font-weight: 300;
-}
-p.menu__card__description {
-  font-size: 15px;
-}
-p.menu__card__prix {
-  font-weight: 500;
-  font-size: 15px;
 }
 
 .btn {
@@ -246,11 +260,6 @@ a i {
 .coeur {
   position: absolute;
   bottom: 1.5rem;
-  right: 1.5rem;
-}
-.coeur--menu {
-  position: absolute;
-  top: 2rem;
   right: 1.5rem;
 }
 
@@ -383,11 +392,13 @@ label.card--clic::after {
   content: "\f058";
   font-size: 30px;
   border-radius: 0 20px 20px 0;
+  opacity: 0;
 }
 
 input:checked + ::before {
   background: linear-gradient(to top, #9356dc -11.44%, #ff79da 123.93%);
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
   transition: all 0.5s ease-out;
@@ -400,6 +411,7 @@ input:checked + ::after {
   position: relative;
   transition: width 0.5s ease-out;
   width: 25%;
+  opacity: 1;
 }
 
 section {
@@ -469,17 +481,18 @@ section ul.restaurants-container {
     max-width: 1440px;
   }
 }
-section .instruction-container {
-  gap: 2rem;
-}
 @media screen and (min-width: 700px) and (max-width: 999.9px) {
-  section .instruction-container {
+  section > div.instruction-container,
+  section ul.instruction-container {
     padding: 2rem;
+    gap: 3rem;
   }
 }
 @media (min-width: 1000px) {
-  section .instruction-container {
+  section > div.instruction-container,
+  section ul.instruction-container {
     padding: 2rem;
+    gap: 3rem;
   }
 }
 @media screen and (min-width: 700px) and (max-width: 999.9px) {
@@ -566,8 +579,18 @@ section .instruction-container {
   opacity: 0;
   animation-delay: 6s;
 }
+@media screen and (min-width: 700px) and (max-width: 999.9px) {
+  .menu {
+    align-items: center;
+  }
+}
+@media (min-width: 1000px) {
+  .menu {
+    align-items: center;
+  }
+}
 .menu__image {
-  height: 15rem;
+  height: 20rem;
   width: 100%;
   z-index: -1;
   object-fit: cover;
@@ -583,12 +606,37 @@ section .instruction-container {
   margin-top: -2rem;
   gap: 2rem;
 }
+@media screen and (min-width: 700px) and (max-width: 999.9px) {
+  .menu__texte {
+    justify-content: center;
+    max-width: 80%;
+  }
+}
+@media (min-width: 1000px) {
+  .menu__texte {
+    width: 80%;
+    max-width: 1000px;
+    justify-content: center;
+  }
+}
 .menu__titre {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
-  padding: 1.5rem 0 0 1rem;
+  padding: 1.5rem 1rem 0 1rem;
+}
+@media screen and (min-width: 700px) and (max-width: 999.9px) {
+  .menu__titre {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1000px) {
+  .menu__titre {
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 .menu__entrees, .menu__plats, .menu__desserts {
   display: flex;
@@ -599,6 +647,7 @@ section .instruction-container {
 }
 .menu__card {
   display: flex;
+  flex-direction: column;
   height: 5rem;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
@@ -637,7 +686,7 @@ section .instruction-container {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu__categorie::after {
+.menu h1::after {
   content: "";
   display: block;
   background: #99e2d0;
@@ -660,15 +709,6 @@ section .instruction-container {
   }
   to {
     transform: translateY(0);
-  }
-}
-@keyframes slide {
-  from {
-    transform: translateX(100%);
-    visibility: visible;
-  }
-  to {
-    transform: translateX(0, 0, 0);
   }
 }
 

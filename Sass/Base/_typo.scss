@@ -3,7 +3,9 @@ h1 {
   font-weight: $titre;
   font-size: 24px;
   line-height: 28px;
-  &.menu__categorie {
+}
+.menu {
+  & h1 {
     text-transform: uppercase;
     font-weight: $text;
     font-size: 16px;
@@ -29,9 +31,24 @@ h2 {
     bottom: 1.2rem;
   }
 }
+span {
+  font-family: $font-family-sans-serif;
+  &.menu__card__titre {
+    font-weight: $textimportant;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  &.menu__card__description {
+    font-weight: $text;
+    font-size: 15px;
+  }
+  &.menu__card__prix {
+    font-weight: $textimportant;
+    font-size: 15px;
+  }
+}
 h3 {
   font-family: 'Shrikhand';
-  font-style: italic;
   font-weight: $textimportant;
   font-size: 1.6rem;
 }
@@ -46,14 +63,6 @@ p {
   }
   &.card__texte {
     font-weight: $text;
-  }
-  &.menu__card__description {
-    font-size: 15px;
-  }
-
-  &.menu__card__prix {
-    font-weight: $textimportant;
-    font-size: 15px;
   }
 }
 .btn {

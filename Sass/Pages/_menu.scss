@@ -12,9 +12,15 @@
   &__desserts &__card {
     @include animated_card($delay_category * 2);
   }
+  @include devices(tablet) {
+    align-items: center;
+  }
+  @include devices(desktop) {
+    align-items: center;
+  }
 
   &__image {
-    height: 15rem;
+    height: 20rem;
     width: 100%;
     z-index: -1;
     object-fit: cover;
@@ -28,13 +34,30 @@
     padding-bottom: 2rem;
     margin-top: -2rem;
     gap: 2rem;
+    @include devices(tablet) {
+      justify-content: center;
+      max-width: 80%;
+    }
+    @include devices(desktop) {
+      width: 80%;
+      max-width: 1000px;
+      justify-content: center;
+    }
   }
   &__titre {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
-    padding: 1.5rem 0 0 1rem;
+    padding: 1.5rem 1rem 0 1rem;
+    @include devices(tablet) {
+      justify-content: center;
+      gap: 1rem;
+    }
+    @include devices(desktop) {
+      justify-content: center;
+      gap: 1rem;
+    }
   }
 
   &__entrees,
@@ -48,6 +71,7 @@
 
   &__card {
     display: flex;
+    flex-direction: column;
     height: 5rem;
     box-shadow: 0px 4px 15px rgba($black, 0.15);
     border-radius: 20px;
@@ -84,7 +108,7 @@
       @include ellipsis;
     }
   }
-  &__categorie::after {
+  & h1::after {
     content: '';
     display: block;
     background: $morning-glory;
