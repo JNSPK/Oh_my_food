@@ -16,7 +16,8 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-// Boucle animation plats
+
+// Boucle animation pages menu
 
 @mixin animated_card($inital_delay: 0s) {
   animation: slideInUp 1s forwards, fadeIn 1s forwards;
@@ -33,10 +34,6 @@
       }
     }
   }
-}
-
-@mixin selected_card() {
-  animation: slideRight 1s forwards;
 }
 
 // Media queries
