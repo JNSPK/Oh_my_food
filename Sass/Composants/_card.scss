@@ -10,6 +10,14 @@
   border-radius: 25px;
   overflow: hidden;
 
+  &__lien {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
   &__img {
     height: 100%;
     width: 100%;
