@@ -103,3 +103,14 @@ footer {
     }
   }
 }
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to top,
+    $lavender-indigo -11.44%,
+    $blush-pink 123.93%
+  );
+}

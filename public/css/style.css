@@ -115,6 +115,14 @@ footer .logoreverse {
   }
 }
 
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #9356dc -11.44%, #ff79da 123.93%);
+}
+
 h1 {
   font-family: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
