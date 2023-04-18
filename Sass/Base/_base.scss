@@ -8,6 +8,7 @@ html {
   height: 100svh;
   width: 100svw;
   scroll-behavior: smooth;
+  -webkit-scrollbar: 0px;
 }
 
 header {
@@ -26,6 +27,7 @@ header {
 }
 body {
   position: relative;
+  overflow-x: hidden;
   & .main-container {
     width: 100%;
     @include devices(desktop) {
