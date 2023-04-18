@@ -252,7 +252,6 @@ a i {
   height: 2rem;
   width: 2rem;
   border-radius: 2rem;
-  z-index: 2;
   background-color: #9356dc;
   color: white;
 }
@@ -270,7 +269,6 @@ a i {
   align-items: center;
   background-color: #99e2d0;
   border-radius: 2px;
-  z-index: 2;
   width: 5rem;
   height: 2rem;
   right: 1rem;
@@ -296,6 +294,28 @@ i.fa-arrow-left {
   position: absolute;
   left: 2rem;
   top: 1.5rem;
+}
+
+.spinner {
+  z-index: 3;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #9356dc 100%, transparent) top/9px 9px no-repeat, conic-gradient(#ff79da 5%, #9356dc 100%);
+  -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(100% - 9px), #000 0);
+  animation: spinner 1.3s 3 forwards;
+}
+.spinner-container {
+  position: fixed;
+  width: 100%;
+  height: 100svh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  animation: spinner-out 2.5s 1 forwards;
+  animation-delay: 4s;
 }
 
 .btn {
@@ -389,17 +409,16 @@ label.card--clic {
   display: flex;
   justify-content: inherit;
 }
-label.card--clic::after {
+label.card--clic .menu__card__coche {
+  display: flex;
   height: 100%;
-  width: 0px;
+  width: 0;
   justify-content: center;
   align-items: center;
-  font-family: "font awesome 5 free";
-  font-weight: bold;
-  content: "\f058";
-  font-size: 30px;
   border-radius: 0 20px 20px 0;
+  background-color: #99e2d0;
   opacity: 0;
+  flex-basis: 0;
 }
 
 input:checked + ::before {
@@ -411,14 +430,18 @@ input:checked + ::before {
   transition: all 0.5s ease-out;
 }
 
-input:checked + ::after {
+input:checked + label .menu__card__coche {
   display: flex;
-  background-color: #99e2d0;
   color: white;
-  position: relative;
-  transition: width 0.5s ease-out;
-  width: 25%;
+  transition: flex-basis 0.5s ease;
   opacity: 1;
+  flex-basis: 20%;
+}
+
+input:not(:checked) + label .menu__card__coche {
+  display: flex;
+  color: white;
+  transition: all 0.5s ease;
 }
 
 section {
@@ -527,8 +550,8 @@ section ul.restaurants-container {
   overflow: hidden;
 }
 .menu__entrees .menu__card {
-  animation: slideInUp 1s forwards, fadeIn 1s forwards;
-  animation-timing-function: ease-in-out;
+  animation: slideInUp 0.5s forwards, fadeIn 1.5s forwards;
+  animation-timing-function: ease;
 }
 .menu__entrees .menu__card:nth-of-type(1) {
   opacity: 0;
@@ -536,55 +559,55 @@ section ul.restaurants-container {
 }
 .menu__entrees .menu__card:nth-of-type(2) {
   opacity: 0;
-  animation-delay: 1s;
+  animation-delay: 0.6s;
 }
 .menu__entrees .menu__card:nth-of-type(3) {
   opacity: 0;
-  animation-delay: 1.5s;
+  animation-delay: 0.9s;
 }
 .menu__entrees .menu__card:nth-of-type(4) {
   opacity: 0;
-  animation-delay: 2s;
+  animation-delay: 1.2s;
 }
 .menu__plats .menu__card {
-  animation: slideInUp 1s forwards, fadeIn 1s forwards;
-  animation-timing-function: ease-in-out;
+  animation: slideInUp 0.5s forwards, fadeIn 1.5s forwards;
+  animation-timing-function: ease;
 }
 .menu__plats .menu__card:nth-of-type(1) {
   opacity: 0;
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 .menu__plats .menu__card:nth-of-type(2) {
   opacity: 0;
-  animation-delay: 3s;
+  animation-delay: 2.1s;
 }
 .menu__plats .menu__card:nth-of-type(3) {
   opacity: 0;
-  animation-delay: 3.5s;
+  animation-delay: 2.4s;
 }
 .menu__plats .menu__card:nth-of-type(4) {
   opacity: 0;
-  animation-delay: 4s;
+  animation-delay: 2.7s;
 }
 .menu__desserts .menu__card {
-  animation: slideInUp 1s forwards, fadeIn 1s forwards;
-  animation-timing-function: ease-in-out;
+  animation: slideInUp 0.5s forwards, fadeIn 1.5s forwards;
+  animation-timing-function: ease;
 }
 .menu__desserts .menu__card:nth-of-type(1) {
   opacity: 0;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 .menu__desserts .menu__card:nth-of-type(2) {
   opacity: 0;
-  animation-delay: 5s;
+  animation-delay: 3.6s;
 }
 .menu__desserts .menu__card:nth-of-type(3) {
   opacity: 0;
-  animation-delay: 5.5s;
+  animation-delay: 3.9s;
 }
 .menu__desserts .menu__card:nth-of-type(4) {
   opacity: 0;
-  animation-delay: 6s;
+  animation-delay: 4.2s;
 }
 @media screen and (min-width: 700px) and (max-width: 999.9px) {
   .menu {
@@ -716,6 +739,30 @@ section ul.restaurants-container {
   }
   to {
     transform: translateY(0);
+  }
+}
+@keyframes spinner {
+  99.99% {
+    transform: rotate(3turn);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes spinner-out {
+  0% {
+    z-index: 2;
+  }
+  50% {
+    height: 100svh;
+  }
+  85% {
+    height: 95svh;
+  }
+  100% {
+    z-index: 2;
+    height: 0svh;
   }
 }
 

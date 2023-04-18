@@ -21,15 +21,31 @@
   }
 }
 
-// Cards
+// Spinner
 
-// @keyframes slide {
-//   from {
-//     transform: translateX(100%);
-//     visibility: visible;
-//   }
+@keyframes spinner {
+  99.99% {
+    transform: rotate(3turn);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes spinner-out {
+  0% {
+    z-index: 2;
+  }
+  50% {
+    height: 100svh;
+  }
 
-//   to {
-//     transform: translateX(0, 0, 0);
-//   }
-// }
+  85% {
+    height: 95svh;
+  }
+
+  100% {
+    z-index: 2;
+    height: 0svh;
+  }
+}
