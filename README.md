@@ -6,5 +6,6 @@ L’UX designer a finalisé les maquettes mobile et desktop du site ! Tu les tro
 
 ## Technos
 
+- Sass
 - CSS (animations)
 - Figma
